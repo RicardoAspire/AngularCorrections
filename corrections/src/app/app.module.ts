@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { ValidatorsComponent } from './components/validators/validators.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { HttpComponent } from './components/http/http.component';
-import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChildRouteOneComponent } from './components/routes/childRouteOne/child-route-one/child-route-one.component';
+import { ChildRouteTwoComponent } from './components/routes/childRouteTwo/child-route-two/child-route-two.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     ValidatorsComponent,
     RoutesComponent,
     HttpComponent,
-    ReactiveFormsComponent
+    ChildRouteOneComponent,
+    ChildRouteTwoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

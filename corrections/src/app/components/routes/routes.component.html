@@ -1,1 +1,23 @@
-<p>routes works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Resolvers</h1>
+            <h2>Name: {{userComponent.first_name}} {{userComponent.last_name}}</h2>
+            <h3>Email: {{userComponent.email}} </h3>
+            <img src="{{userComponent.avatar}}" class="image" width="250px" height="200px">
+        </div>
+        <div class="col">
+            <h1>Data in the route</h1>
+            <h4>{{dataFromRoute.value.title}}</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h1>Children components</h1>
+            <button (click)="showChildOne()" class="btn btn-success m-2">Child one</button>
+            <button (click)="showChildTwo()" class="btn btn-success">Child two</button>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
