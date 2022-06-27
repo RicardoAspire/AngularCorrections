@@ -1,1 +1,21 @@
-<p>validators works!</p>
+<div class="container">
+    <ng-container [formGroup] = "userForm">
+        <div class="row">
+            <div class="col-5">
+                <app-basic-info formGroupName="basicInfo"></app-basic-info>
+            </div>
+            <div class="col-4">
+                <app-address formGroupName="address"></app-address><br>
+            </div>
+            <div class="col-2">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Form values</h5>
+                    <pre style="width:fit-content;">{{userForm.value|json}}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="send">
+    </ng-container>
+</div>

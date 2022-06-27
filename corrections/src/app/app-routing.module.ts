@@ -6,11 +6,14 @@ import { ChildRouteTwoComponent } from './components/routes/childRouteTwo/child-
 import { DataResolverService } from './components/routes/resolvers/data.resolver.service';
 import { RoutesComponent } from './components/routes/routes.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { ValidatorsComponent } from './components/validators/validators.component';
+
 const routes: Routes = [
-  /* {
-    path: 'reactiveForms', 
-    loadChildren: ()=> import ('./lazy/lazy.module').then(m => m.LazyModule)
-  }, */
+  {path:'', component: HttpComponent},
+  {
+    path: 'reactive', 
+    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
+  },
   {
     path: 'routes', 
     component: RoutesComponent, 
@@ -22,7 +25,7 @@ const routes: Routes = [
     ]
   },
   { path: 'http', component: HttpComponent },
-  { path: 'reactiveForms', component: ReactiveFormsComponent }
+  { path: 'validators', component: ValidatorsComponent },
 
 ];
 

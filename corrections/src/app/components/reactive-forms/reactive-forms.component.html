@@ -1,1 +1,59 @@
-<p>reactive-forms works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <form [formGroup]="userForm" (ngSubmit)="saveForm()">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">Basic info</h5>
+              <h6 class="card-subtitle mb-2 text-muted">CUSTOM VALIDATORS, CROSS VALIDATORS, ASYNC VALIDATORS</h6>
+              <div class="form-group">
+                <label for="firstName">First Name</label><br>
+                <input type="text" formControlName="firstName"><br>
+                <small *ngIf="userForm?.get('firstName')?.invalid" class="text-danger">Name is required</small><br>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label><br>
+                <input type="text" formControlName="lastName"><br>
+                <small *ngIf="userForm?.get('lastName')?.invalid" class="text-danger">Last name is required</small><br>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label><br>
+                <input type="email" formControlName="email"><br>
+                <small *ngIf="userForm?.get('email')?.invalid" class="text-danger">Email is required</small><br>
+              </div>
+
+              <div class="form-group">
+                <label for="age" >Age</label><br>
+                <input type="number" formControlName="age"><br>
+                <small *ngIf="userForm?.get('age')?.invalid" class="text-danger">Age must be higher than 18</small><br>
+              </div>
+
+              <div class="form-group">
+                <label for="password" >Password</label><br>
+                <input type="password" formControlName="password"><br>
+                <small *ngIf="userForm?.get('password')?.invalid" class="text-danger">Password is required</small><br>
+              </div>
+
+              <div class="form-group">
+                <label for="passwordTwo" >Confirm Password</label><br>
+                <input type="password" formControlName="passwordTwo"><br>
+                <small *ngIf="userForm.errors?.misMatch" class="text-danger">Passwords do not match</small><br>
+              </div>
+
+              <button type="submit" class="btn btn-success">Register</button> 
+            </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-2">
+      <div class="card" style="width: 18rem;">
+          <div class="card-body">
+          <h5 class="card-title">Form values</h5>
+          <pre style="width:fit-content;">{{userForm.value|json}}</pre>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

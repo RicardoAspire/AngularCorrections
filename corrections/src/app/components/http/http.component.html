@@ -1,1 +1,11 @@
-<p>http works!</p>
+<div class="container" *ngIf="user">
+    <div class="row">
+        <div class="col">
+            <h1>Interceptors HTTP</h1>
+            <br>
+            <h2>Name: {{user.data.first_name}} {{user.data.last_name}}</h2>
+            <h3>Email: {{user.data.email}} </h3>
+            <img src="{{user.data.avatar}}" class="image" width="250px" height="200px">
+        </div>
+    </div>
+</div>
